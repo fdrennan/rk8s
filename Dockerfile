@@ -15,10 +15,10 @@ RUN Rscript -e 'install.packages(c("stringr", "glue", "jsonlite"), repos = c("CR
 
 RUN groupadd -r plumber && useradd --no-log-init -r -g plumber plumber
 
-ADD plumber.R /home/plumber/plumber.R
-ADD entrypoint.R /home/plumber/entrypoint.R
-
 EXPOSE 8000
+
+ADD entrypoint.R /home/plumber/entrypoint.R
+ADD plumber.R /home/plumber/plumber.R
 
 WORKDIR /home/plumber
 USER plumber
