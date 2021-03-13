@@ -16,3 +16,8 @@ stop:
 
 remove:
 	docker rm $(docker ps -aq)
+
+git:
+	git add .
+	git commit -m "$m"
+	git push -u origin master

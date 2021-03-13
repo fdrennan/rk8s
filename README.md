@@ -1,8 +1,9 @@
 # rk8s
 
-https://mdneuzerling.com/post/hosting-a-plumber-api-with-kubernetes/
+## Code to run plumber containers on Kubernetes
 
-https://code.markedmondson.me/r-on-kubernetes-serverless-shiny-r-apis-and-scheduled-scripts/
+[DockerHub](https://hub.docker.com/repository/docker/fdrennan/rk8s)
+[Source](https://mdneuzerling.com/post/hosting-a-plumber-api-with-kubernetes/)
 
 
 ```
