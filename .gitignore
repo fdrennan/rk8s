@@ -1,0 +1,6 @@
+.Rproj.user
+.idea
+renv
+venv
+.Renviron
+.env
