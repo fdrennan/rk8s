@@ -20,7 +20,7 @@ remove:
 git:
 	git add .
 	git commit -m "$m"
-	git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	git push origin $(git rev-parse --abbrev-ref HEAD)
 :wq
 
 
