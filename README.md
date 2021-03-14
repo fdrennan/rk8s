@@ -18,7 +18,11 @@ the following on it.
 
 ## Run R Box With Command
 ```
-commmand here
+aws ec2 run-instances \ 
+    --image-id ami-042581ed078a57f67 \
+    --count 1 \
+    --instance-type t2.large \
+    --key-name ndexrbox # whatever your keyfile name is
 ```
 
 ## Set up AWS
