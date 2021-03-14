@@ -20,6 +20,8 @@ EXPOSE 8000
 ADD entrypoint.R /home/plumber/entrypoint.R
 ADD plumber.R /home/plumber/plumber.R
 
+COPY .Renviron /home/plumber/.Renviron
+
 WORKDIR /home/plumber
 USER plumber
 CMD Rscript entrypoint.R
