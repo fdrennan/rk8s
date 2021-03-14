@@ -3,9 +3,12 @@ style:
 	R -e "styler::style_file('entrypoint.R')"
 
 build:
-	docker build -t mdneuzerling/plumber-on-k8s .
+	docker build -t local-rk8s .
 
-run:
+runlocal:
+	docker run -p 8000:8000 local-rk8s
+
+runprod:
 	docker run -p 8000:8000 fdrennan/rk8s
 
 list:
