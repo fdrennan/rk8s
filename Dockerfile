@@ -15,13 +15,22 @@ RUN Rscript -e 'install.packages(c("stringr", "glue", "jsonlite"), repos = c("CR
 
 RUN groupadd -r plumber && useradd --no-log-init -r -g plumber plumber
 
-EXPOSE 8000
-
 ADD entrypoint.R /home/plumber/entrypoint.R
 ADD plumber.R /home/plumber/plumber.R
 
 COPY .Renviron /home/plumber/.Renviron
 
+EXPOSE 8000
+
 WORKDIR /home/plumber
 USER plumber
+
+COPY renv.lock .
+COPY NAMESPACE .
+COPY DESCRIPTION .
+COPY R .
+COPY NAMESPACE .
+
+RUN R CMD INSTALL
+
 CMD Rscript entrypoint.R
