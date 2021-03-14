@@ -11,6 +11,11 @@ Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
+Depends:
+    plumber,
+    glue,
+    stringr,
+    jsonlite
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

@@ -1,8 +1,4 @@
-# entrypoint.R
-library(plumber)
-library(glue)
-library(stringr)
-library(jsonlite)
+library(rk8s)
 
 pr <- plumber::plumb("plumber.R")
 
