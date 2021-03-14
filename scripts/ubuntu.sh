@@ -37,7 +37,8 @@ apt-get install -y \
     containerd.io \
     net-tools \
     gdebi \
-    r-base
+    r-base \
+    nginx
 
 curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
@@ -45,8 +46,19 @@ chmod +x /usr/local/bin/docker-compose
 
 groupadd docker | echo already in group
 
-usermod -aG docker $USER
+sudo su - \
+-c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+
+sudo su - \
+-c "R -e \"install.packages('rmarkdown', repos='https://cran.rstudio.com/')\""
+
+
+wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1106-amd64.deb
+wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.16.958-amd64.deb
 
 
 
-
+echo "usermod -aG docker $USER" >> post_install.sh
+echo "sudo passwd ubuntu" >> post_install.sh
+echo "gdebi shiny-server-1.5.16.958-amd64.deb" >> post_install.sh
+echo "gdebi rstudio-server-1.4.1106-amd64.deb" >> post_install.sh

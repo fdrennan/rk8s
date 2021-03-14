@@ -1,5 +1,15 @@
 # rk8s
 
+Want to run R at scale? How about at the tap of a button? That's what this is - (for me at least) 
+
+# R Box v1.0
+
+RStudio Server
+Shiny-Server
+nginx (Not Configured)
+aws cli
+kubectl eksctl
+
 ## Installation
 
 Follow the directions [here](https://kubernetes.io/docs/tasks/tools/) for minikube, kubectl.
