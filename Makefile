@@ -6,7 +6,7 @@ build:
 	docker build -t mdneuzerling/plumber-on-k8s .
 
 run:
-	docker run -p 8000:8000 mdneuzerling/plumber-on-k8s
+	docker run -p 8000:8000 fdrennan/rk8s
 
 list:
 	docker ps -aq
@@ -17,10 +17,5 @@ stop:
 remove:
 	docker rm $(docker ps -aq)
 
-git:
-	git add .
-	git commit -m "$m"
-	git push origin $(git rev-parse --abbrev-ref HEAD)
-:wq
 
 

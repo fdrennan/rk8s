@@ -16,8 +16,9 @@ eksctl create cluster \
   --nodes-min 1 \
   --nodes-max 10 \
   --name ndexr
-```
+  
 eksctl scale nodegroup --cluster=ndexr --nodes=30 --name=ndexr --nodes-min=30 --nodes-max=40
+```
 
 
 Start Services
