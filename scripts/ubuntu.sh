@@ -7,6 +7,10 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+
+
 apt-get update -y
 apt-get upgrade -y
 
@@ -32,8 +36,8 @@ apt-get install -y \
     docker-ce-cli \
     containerd.io \
     net-tools \
-    gdebi
-
+    gdebi \
+    r-base
 
 curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
@@ -42,6 +46,7 @@ chmod +x /usr/local/bin/docker-compose
 groupadd docker | echo already in group
 
 usermod -aG docker $USER
+
 
 
 

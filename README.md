@@ -5,7 +5,7 @@
 Follow the directions [here](https://kubernetes.io/docs/tasks/tools/) for minikube, kubectl.
 
 
-
+wget https://raw.githubusercontent.com/fdrennan/rk8s/dev/scripts/ubuntu.sh
 
 ```
 eksctl create cluster \
