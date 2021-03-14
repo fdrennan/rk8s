@@ -1,21 +1,34 @@
 # rk8s
 
-Want to run R at scale? How about at the tap of a button? That's what this is - (for me at least) 
+## Motivation
+
+Want to run R at scale? How about at the tap of a button? That's what this is - (for me at least)
 
 # R Box v1.0
 
-RStudio Server
-Shiny-Server
-nginx (Not Configured)
-aws cli
-kubectl eksctl
+First, we start from the same place. I have pre-configured an AMI that we can use. I have installed
+the following on it.
 
-## Installation
+*  RStudio Server
+*  Shiny-Server
+*  nginx (Not Configured)
+*  aws cli
+*  kubectl 
+*  eksctl
 
-Follow the directions [here](https://kubernetes.io/docs/tasks/tools/) for minikube, kubectl.
+## Run R Box With Command
+```
+commmand here
+```
 
+## Set up AWS
+```
+aws configure
+```
 
-wget https://raw.githubusercontent.com/fdrennan/rk8s/dev/scripts/ubuntu.sh
+# Making stuff with Kubernetes
+
+Start a cluster
 
 ```
 eksctl create cluster \
@@ -26,10 +39,7 @@ eksctl create cluster \
   --nodes-min 1 \
   --nodes-max 10 \
   --name ndexr
-  
-eksctl scale nodegroup --cluster=ndexr --nodes=30 --name=ndexr --nodes-min=30 --nodes-max=40
 ```
-
 
 Start Services
 ```
