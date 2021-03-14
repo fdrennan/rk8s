@@ -1,17 +1,9 @@
-# entrypoint.R
-library(plumber)
-library(glue)
-library(stringr)
-library(jsonlite)
-
-
-HOST <- "0.0.0.0"
-PORT <- 8000
-SWAGGER_UI <- TRUE # PLUMBER ONLY
+library(rk8s)
 
 pr <- plumber::plumb("plumber.R")
+
 pr$run(
-  host = HOST,
-  port = PORT,
-  swagger = SWAGGER_UI
+  host = Sys.getenv("HOST"),
+  port = as.numeric(Sys.getenv("PORT")),
+  swagger = Sys.getenv("SWAGGER"),
 )
