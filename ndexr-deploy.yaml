@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ndexr
 spec:
-  replicas: 300
+  replicas: 3000
   selector:
     matchLabels:
       app: ndexr

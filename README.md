@@ -48,10 +48,10 @@ eksctl create cluster \
 ```
 eksctl scale nodegroup \
     --cluster=test1 \
-    --nodes=0 \
-    --nodes-max=40 \
+    --nodes=60 \
+    --nodes-max=60 \
     --nodes-min=0 \
-    ng-27159ba8
+    ng-7143b537
 ```
 
 
@@ -82,15 +82,9 @@ kubectl delete -f ndexr-svc.yaml
 eksctl delete cluster --name=test1
 ```
 
-Scale
-```
-kubectl scale deployment student-service --replicas=2
-```
-
 Load Test
 ```
-siege -c 10 -r 10 -b "a70fadf9321c440208574f4b3518d86d-1342548954.us-west-2.elb.amazonaws.com/wait"
-siege -c 10 -t5s -b "http://acaf0acdf80584b938b54e8c9d7ed07e-2114106703.us-west-2.elb.amazonaws.com"
+siege -c 255 -t7s -b "ab880661ace7447c39efe985ccd5c5b8-1917891002.us-west-2.elb.amazonaws.com/wait"
 ```
 
 kubectl get all
@@ -134,5 +128,30 @@ Successful transactions:        1204
 Failed transactions:               0
 Longest transaction:           15.20
 Shortest transaction:           5.00
+
+```
+
+
+```
+
+NAME                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/ndexr-6b79d5f848   3000      3000      2729    18m
+(venv) fdrennan@fdrennan-XPS-13-9365 ~/PycharmProjects/minikube (dev-2) $ siege -c 255 -t60s -b "ab880661ace7447c39efe985ccd5c5b8-1917891002.us-west-2.elb.amazonaws.com/wait"
+** SIEGE 4.0.4
+** Preparing 255 concurrent users for battle.
+The server is now under siege...
+Lifting the server siege...
+Transactions:                   2672 hits
+Availability:                 100.00 %
+Elapsed time:                  59.51 secs
+Data transferred:               0.08 MB
+Response time:                  5.41 secs
+Transaction rate:              44.90 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                  242.91
+Successful transactions:        2672
+Failed transactions:               0
+Longest transaction:           15.07
+Shortest transaction:           5.08
 
 ```
