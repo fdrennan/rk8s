@@ -18,8 +18,6 @@ RUN groupadd -r plumber && useradd --no-log-init -r -g plumber plumber
 ADD entrypoint.R /home/plumber/entrypoint.R
 ADD plumber.R /home/plumber/plumber.R
 
-COPY .Renviron /home/plumber/.Renviron
-
 EXPOSE 8000
 
 WORKDIR /home/plumber
