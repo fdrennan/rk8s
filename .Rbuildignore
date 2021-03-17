@@ -2,3 +2,13 @@
 ^renv\.lock$
 ^rk8s\.Rproj$
 ^\.Rproj\.user$
+kube
+plumber
+notes
+Dockerfile
+Makefile
+.Rhistory
+.idea
+venv
+scripts
+^LICENSE\.md$

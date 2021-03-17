@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.0.3",
+    "Version": "4.0.4",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -37,6 +37,13 @@
       "Repository": "CRAN",
       "Hash": "e75525c55c70e5f4f78c9960a4b402e9"
     },
+    "curl": {
+      "Package": "curl",
+      "Version": "4.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2b7d10581cc730804e9ed178c8374bd6"
+    },
     "glue": {
       "Package": "glue",
       "Version": "1.4.2",
@@ -65,6 +72,13 @@
       "Repository": "CRAN",
       "Hash": "d0a62b247165aabf397fded504660d8a"
     },
+    "lifecycle": {
+      "Package": "lifecycle",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3471fb65971f1a7b2d4ae7848cf2db8d"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.1",
@@ -72,12 +86,19 @@
       "Repository": "CRAN",
       "Hash": "41287f1ac7d28a92f0a286ed507928d3"
     },
-    "plumber": {
-      "Package": "plumber",
-      "Version": "0.4.6",
+    "mime": {
+      "Package": "mime",
+      "Version": "0.10",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "be585bfab152779520e8f9ac86b122b9"
+      "Hash": "26fa77e707223e1ce042b2b5d09993dc"
+    },
+    "plumber": {
+      "Package": "plumber",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4d095c702eaa44af48ad6b2a7b48753e"
     },
     "promises": {
       "Package": "promises",
@@ -100,6 +121,13 @@
       "Repository": "CRAN",
       "Hash": "599df23c40a4fce9c7b4764f28c37857"
     },
+    "sodium": {
+      "Package": "sodium",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9f07fda8802e9a2ed7e91f20f2d814ce"
+    },
     "stringi": {
       "Package": "stringi",
       "Version": "1.5.3",
@@ -107,12 +135,19 @@
       "Repository": "CRAN",
       "Hash": "a063ebea753c92910a4cca7b18bc1f05"
     },
-    "stringr": {
-      "Package": "stringr",
-      "Version": "1.4.0",
+    "swagger": {
+      "Package": "swagger",
+      "Version": "3.33.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0759e6b6c0957edb1311028a49a35e76"
+      "Hash": "f28d25ed70c903922254157c11b0081d"
+    },
+    "webutils": {
+      "Package": "webutils",
+      "Version": "1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "75d8b5b05fe22659b54076563f83f26a"
     }
   }
 }
