@@ -1,0 +1,9 @@
+version: '3'
+services:
+  rbase:
+    # image: fdrennan/biggr3
+    build: .
+    restart: "always"
+    user: 'plumber'
+    ports:
+     - '80:8000'
