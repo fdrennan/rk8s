@@ -12,3 +12,4 @@ Makefile
 venv
 scripts
 ^LICENSE\.md$
+^README\.Rmd$
