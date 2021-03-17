@@ -14,19 +14,21 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 
 RUN Rscript -e 'install.packages("renv", repos = c("CRAN" = Sys.getenv("CRAN_REPO")))'
 RUN Rscript -e 'install.packages("devtools", repos = c("CRAN" = Sys.getenv("CRAN_REPO")))'
+RUN Rscript -e 'install.packages("plumber", repos = c("CRAN" = Sys.getenv("CRAN_REPO")))'
+RUN Rscript -e 'install.packages("shiny", repos = c("CRAN" = Sys.getenv("CRAN_REPO")))'
 
 COPY renv.lock .
 RUN R -e "renv::consent(provided=TRUE)"
 RUN R -e "renv::rebuild()"
 
-COPY NAMESPACE .
-COPY DESCRIPTION .
-COPY R ./R
-COPY man .
-COPY ./plumber/entrypoint.R .
-COPY ./plumber/plumber.R .
-
+COPY ./NAMESPACE ./NAMESPACE
+COPY ./DESCRIPTION ./DESCRIPTION
+COPY ./R ./R
+COPY ./man ./man
+COPY ./plumber/entrypoint.R ./entrypoint.R
+COPY ./plumber/plumber.R ./plumber.R
+COPY ./Makefile ./Makefile
 
 RUN R CMD INSTALL --no-multiarch --with-keep.source .
 
-# CMD Rscript entrypoint.R
+CMD Rscript entrypoint.R
