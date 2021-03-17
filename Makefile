@@ -6,7 +6,10 @@ style:
 build:
 	docker build -t local-rk8s .
 
-runlocal:
+hopin:
+	docker run -it local-rk8s bash
+
+run:
 	docker run -p 80:8000 local-rk8s
 
 runprod:

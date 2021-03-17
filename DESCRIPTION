@@ -11,5 +11,13 @@ Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+    glue
+Suggests:
+    devtools,
+    usethis,
+    testthat,
+    styler,
+    plumber
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
