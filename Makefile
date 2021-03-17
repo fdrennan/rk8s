@@ -7,10 +7,10 @@ build:
 	docker build -t local-rk8s .
 
 runlocal:
-	docker run -p 8000:8000 local-rk8s
+	docker run -p 80:8000 local-rk8s
 
 runprod:
-	docker run -p 8000:8000 fdrennan/rk8s
+	docker run -p 80:8000 fdrennan/rk8s
 
 list:
 	docker ps -aq

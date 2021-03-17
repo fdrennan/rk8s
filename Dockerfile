@@ -16,8 +16,8 @@ RUN Rscript -e 'install.packages(c("renv", "devtools"), repos = c("CRAN" = Sys.g
 
 RUN groupadd -r plumber && useradd --no-log-init -r -g plumber plumber
 
-ADD entrypoint.R /home/plumber/entrypoint.R
-ADD plumber.R /home/plumber/plumber.R
+ADD ./plumber/entrypoint.R /home/plumber/entrypoint.R
+ADD ./plumber/plumber.R /home/plumber/plumber.R
 
 EXPOSE 8000
 

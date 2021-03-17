@@ -1,9 +1,6 @@
-
-#* Wait 5 seconds and then return the current time
-#* @serializer json
-#* @param wait_time
-#* @get /wait
-function(wait_time = 10) {
+#' time_diff
+#' @export time_diff
+time_diff <- function(wait_time = 10) {
   start_time <- Sys.time()
   wait_time <- as.numeric(wait_time)
   if (wait_time > 60) {
