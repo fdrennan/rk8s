@@ -22,6 +22,7 @@ ADD plumber.R /home/plumber/plumber.R
 EXPOSE 8000
 
 WORKDIR /home/plumber
+USER plumber
 
 COPY renv.lock .
 COPY NAMESPACE .
@@ -29,8 +30,7 @@ COPY DESCRIPTION .
 COPY R .
 COPY NAMESPACE .
 
-RUN R -e "renv::consent(provided=TRUE);renv::rebuild()"
+RUN R -e "renv::restore()"
 RUN R -e "devtools::install()"
 
-USER plumber
 CMD Rscript entrypoint.R

@@ -1,6 +1,7 @@
 style:
 	R -e "styler::style_file('plumber.R')"
 	R -e "styler::style_file('entrypoint.R')"
+	R -e "styler::style_dir('R')"
 
 build:
 	docker build -t local-rk8s .
