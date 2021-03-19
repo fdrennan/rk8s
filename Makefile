@@ -1,6 +1,3 @@
-push: style readme build
-	echo 'Package built'
-
 style:
 	R -e "styler::style_file('plumber.R')"
 	R -e "styler::style_file('entrypoint.R')"
@@ -32,6 +29,9 @@ run:
 
 runprod:
 	docker run -p 80:8000 fdrennan/rk8s
+
+apply:
+
 
 
 

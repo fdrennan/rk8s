@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ndexr
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ndexr
+  template:
+    metadata:
+      labels:
+        app: ndexr
+    spec:
+      containers:
+      - name: ndexr
+        image: fdrennan/rk8s:dev
+        ports:
+        - containerPort: 8000

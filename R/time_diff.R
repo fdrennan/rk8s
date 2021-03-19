@@ -7,7 +7,7 @@ time_diff <- function(wait_time = 10) {
   start_time <- Sys.time()
   wait_time <- as.numeric(wait_time)
   if (wait_time > 60) {
-    message(glue('On time {wait_time}'))
+    message(glue("On time {wait_time}"))
     stop("Wont wait that long")
   }
   Sys.sleep(wait_time)
