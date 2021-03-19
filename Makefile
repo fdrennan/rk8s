@@ -24,14 +24,9 @@ upd:
 hopin:
 	docker run -it local-rk8s bash
 
-run:
+drd:
 	docker run -p 80:8000 local-rk8s
 
-runprod:
+drp:
 	docker run -p 80:8000 fdrennan/rk8s
-
-apply:
-
-
-
 
